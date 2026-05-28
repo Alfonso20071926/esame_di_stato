@@ -9,47 +9,59 @@
 
   <style>
 
+    :root{
+      --bg1:#0f172a;
+      --bg2:#111827;
+      --card:#1f2937;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+      --accent:#38bdf8;
+      --accent2:#22c55e;
+    }
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
     body{
-      background:linear-gradient(to right,#eaf2ff,#ffffff);
-      color:#222;
+      background: linear-gradient(135deg,var(--bg1),var(--bg2));
+      color:var(--text);
       line-height:1.8;
     }
 
     header{
-      background:#0d47a1;
-      color:white;
       text-align:center;
-      padding:70px 20px;
+      padding:80px 20px;
+      background: radial-gradient(circle at top, #1e3a8a, transparent 70%);
     }
 
     header h1{
       font-size:3rem;
-      margin-bottom:15px;
+      margin-bottom:10px;
+      letter-spacing:1px;
     }
 
     header p{
-      font-size:1.3rem;
+      color:var(--muted);
+      font-size:1.2rem;
     }
 
     .quote{
       margin-top:25px;
       font-style:italic;
-      font-size:1.2rem;
-      color:#ffeb3b;
+      color:var(--accent);
+      font-size:1.1rem;
     }
 
     nav{
-      background:#1565c0;
-      padding:15px;
       position:sticky;
       top:0;
+      background:rgba(17,24,39,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
       z-index:100;
     }
 
@@ -57,51 +69,54 @@
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      gap:20px;
+      gap:18px;
       list-style:none;
+      padding:15px;
     }
 
     nav a{
-      color:white;
+      color:var(--text);
       text-decoration:none;
-      font-weight:bold;
+      font-weight:600;
       transition:0.3s;
     }
 
     nav a:hover{
-      color:#ffeb3b;
+      color:var(--accent);
     }
 
     .container{
       width:90%;
-      max-width:1200px;
+      max-width:1100px;
       margin:auto;
       padding:40px 0;
     }
 
     .section{
-      background:white;
-      padding:35px;
-      margin-bottom:35px;
-      border-radius:15px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      background:rgba(31,41,55,0.9);
+      padding:30px;
+      margin-bottom:30px;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,0.05);
+      box-shadow:0 10px 25px rgba(0,0,0,0.3);
       transition:0.3s;
     }
 
     .section:hover{
-      transform:translateY(-5px);
+      transform:translateY(-4px);
+      border-color:rgba(56,189,248,0.3);
     }
 
     .section h2{
-      color:#0d47a1;
-      margin-bottom:20px;
-      border-bottom:2px solid #1565c0;
-      padding-bottom:10px;
+      color:var(--accent);
+      margin-bottom:15px;
+      border-left:4px solid var(--accent);
+      padding-left:10px;
     }
 
     ul{
-      margin-left:25px;
-      margin-top:15px;
+      margin-left:20px;
+      margin-top:10px;
     }
 
     li{
@@ -109,29 +124,37 @@
     }
 
     .highlight{
-      color:#0d47a1;
+      color:var(--accent2);
       font-weight:bold;
     }
 
+    a.button{
+      display:inline-block;
+      margin-top:15px;
+      padding:12px 20px;
+      background:var(--accent);
+      color:#0b1220;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    a.button:hover{
+      background:#0ea5e9;
+    }
+
     footer{
-      background:#0d47a1;
-      color:white;
       text-align:center;
-      padding:20px;
+      padding:25px;
+      color:var(--muted);
+      border-top:1px solid rgba(255,255,255,0.1);
       margin-top:40px;
     }
 
     @media(max-width:768px){
-
-      header h1{
-        font-size:2rem;
-      }
-
-      nav ul{
-        flex-direction:column;
-        align-items:center;
-      }
-
+      header h1{font-size:2.2rem;}
+      nav ul{flex-direction:column;}
     }
 
   </style>
@@ -140,346 +163,81 @@
 
 <body>
 
-  <header>
-
-    <h1>Presentazione Personale</h1>
-
-    <p>
-      Alfonso Malafronte
-    </p>
-
-    <div class="quote">
-      “Uomini forti, destini forti, uomini deboli, destini deboli.
-      Non c'è altra strada.”
-      <br>
-      - Luciano Spalletti
-    </div>
-
-  </header>
-
-  <nav>
-
-    <ul>
-      <li><a href="#chi-sono">Chi Sono</a></li>
-      <li><a href="#scuola">Percorso Scolastico</a></li>
-      <li><a href="#attivita">Attività Svolte</a></li>
-      <li><a href="#sport">Lo Sport nella Mia Vita</a></li>
-      <li><a href="#futuro">Il Mio Futuro</a></li>
-    </ul>
-
-  </nav>
-
-  <div class="container">
-
-    <section class="section" id="chi-sono">
-
-      <h2>Chi Sono</h2>
-
-      <p>
-        Mi chiamo <span class="highlight">Alfonso Malafronte</span>
-        e ho frequentato per cinque anni
-        la sezione C dell’indirizzo
-        <span class="highlight">Scienze Applicate</span>.
-      </p>
-
-      <br>
-
-      <p>
-        Durante il mio percorso scolastico
-        ho sviluppato non solo conoscenze scolastiche,
-        ma anche valori importanti come
-        il sacrificio, l’impegno,
-        il rispetto delle regole
-        e la capacità di lavorare in gruppo.
-      </p>
-
-      <br>
-
-      <p>
-        La frase di Luciano Spalletti
-        che ho scelto per rappresentarmi
-        descrive perfettamente il mio modo di affrontare la vita:
-      </p>
-
-      <br>
-
-      <p class="highlight">
-        “Uomini forti, destini forti,
-        uomini deboli, destini deboli.
-        Non c'è altra strada.”
-      </p>
-
-      <br>
-
-      <p>
-        Questa frase mi motiva ogni giorno
-        a dare sempre il massimo,
-        sia nello studio
-        sia nello sport
-        sia nella vita personale.
-      </p>
-
-    </section>
-
-    <section class="section" id="scuola">
-
-      <h2>Percorso Scolastico</h2>
-
-      <p>
-        Il percorso di Scienze Applicate
-        mi ha permesso di approfondire
-        materie scientifiche come matematica,
-        fisica, informatica e scienze,
-        sviluppando un metodo di studio
-        basato sul ragionamento,
-        sull’osservazione
-        e sulla capacità di risolvere problemi.
-      </p>
-
-      <br>
-
-      <p>
-        In questi cinque anni
-        ho imparato l’importanza della costanza
-        e della determinazione.
-        La scuola non è stata soltanto
-        un luogo di apprendimento,
-        ma anche un ambiente
-        in cui sono cresciuto umanamente,
-        costruendo amicizie,
-        esperienze e ricordi importanti.
-      </p>
-
-    </section>
-
-    <section class="section" id="attivita">
-
-      <h2>Attività Svolte Durante i Cinque Anni</h2>
-
-      <p>
-        Durante il mio percorso scolastico
-        ho partecipato a numerose attività
-        che mi hanno aiutato
-        a crescere dal punto di vista umano,
-        sociale e sportivo.
-      </p>
-
-      <ul>
-
-        <li>
-          Partecipazione al
-          <span class="highlight">corso pomeridiano di pallavolo</span>,
-          che mi ha insegnato
-          il valore del lavoro di squadra
-          e della collaborazione.
-        </li>
-
-        <li>
-          Partecipazione e membro dell’organizzazione
-          dei vari tornei scolastici
-          durante le settimane dello studente.
-          Questa esperienza mi ha permesso
-          di sviluppare senso di responsabilità,
-          organizzazione e spirito di gruppo.
-        </li>
-
-        <li>
-          Partecipazione a vari
-          <span class="highlight">tornei di calcio</span>,
-          sport che rappresenta
-          una delle mie più grandi passioni.
-        </li>
-
-        <li>
-          Primo viaggio della mia vita all’estero
-          in <span class="highlight">Grecia</span>,
-          esperienza che mi ha permesso
-          di conoscere nuove culture,
-          nuove persone
-          e di diventare più autonomo.
-        </li>
-
-        <li>
-          Aiuto a mio padre
-          nella lavorazione dell’acciaio
-          per la costruzione di macchine
-          utilizzate nel settore alimentare.
-          Questa esperienza mi ha insegnato
-          il valore del lavoro,
-          del sacrificio
-          e dell’impegno quotidiano.
-        </li>
-
-      </ul>
-
-    </section>
-
-    <section class="section" id="sport">
-
-      <h2>L’Importanza dello Sport nella Mia Vita</h2>
-
-      <p>
-        Lo sport ha sempre avuto
-        un ruolo fondamentale nella mia vita,
-        soprattutto il calcio.
-      </p>
-
-      <br>
-
-      <p>
-        Attraverso il calcio
-        ho imparato valori importanti
-        come la disciplina,
-        il rispetto,
-        la determinazione,
-        il sacrificio
-        e il lavoro di squadra.
-      </p>
-
-      <br>
-
-      <p>
-        Lo sport mi ha aiutato anche
-        dal punto di vista della salute,
-        permettendomi di mantenere
-        uno stile di vita sano,
-        migliorare il benessere fisico
-        e affrontare le difficoltà
-        con maggiore forza mentale.
-      </p>
-
-      <br>
-
-      <p>
-        Il calcio rappresenta per me
-        molto più di un semplice sport:
-        è una passione che mi accompagna
-        fin da piccolo
-        e che continua ancora oggi
-        a motivarmi ogni giorno.
-      </p>
-
-    </section>
-
-    <section class="section" id="futuro">
-
-      <h2>Il Mio Futuro e i Miei Obiettivi</h2>
-
-      <p>
-        Dopo il diploma
-        desidero frequentare l’università di
-        <span class="highlight">Fisioterapia</span>.
-      </p>
-
-      <br>
-
-      <p>
-        Ho scelto questo percorso
-        perché unisce due aspetti
-        molto importanti della mia vita:
-        la salute e lo sport.
-      </p>
-
-      <br>
-
-      <p>
-        Il mio sogno è quello di diventare
-        il fisioterapista di una squadra di calcio,
-        aiutando gli atleti
-        a recuperare dagli infortuni
-        e a migliorare le loro condizioni fisiche.
-      </p>
-
-      <br>
-
-      <p>
-        Credo che questa professione
-        richieda grande responsabilità,
-        preparazione
-        e passione,
-        qualità che desidero sviluppare
-        nel mio percorso universitario e lavorativo.
-      </p>
-
-      <br>
-
-      <p>
-        Voglio trasformare la mia passione
-        per il calcio e per il benessere fisico
-        in un lavoro che possa aiutare gli altri
-        e permettermi di realizzare i miei obiettivi.
-      </p>
-
-    </section>
-
+<header>
+  <h1>Presentazione Personale</h1>
+  <p>Alfonso Malafronte</p>
+  <div class="quote">
+    “Uomini forti, destini forti, uomini deboli, destini deboli.” - Luciano Spalletti
   </div>
-<section class="section" id="educazione-civica">
+</header>
 
-  <h2>Collegamento al Percorso di Educazione Civica</h2>
+<nav>
+  <ul>
+    <li><a href="#chi-sono">Chi Sono</a></li>
+    <li><a href="#scuola">Scuola</a></li>
+    <li><a href="#attivita">Attività</a></li>
+    <li><a href="#sport">Sport</a></li>
+    <li><a href="#futuro">Futuro</a></li>
+    <li><a href="#pcto">PCTO FSL</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+
+<section class="section" id="chi-sono">
+  <h2>Chi Sono</h2>
+  <p>Mi chiamo <span class="highlight">Alfonso Malafronte</span> e ho frequentato Scienze Applicate.</p>
+</section>
+
+<section class="section" id="scuola">
+  <h2>Percorso Scolastico</h2>
+  <p>Percorso scientifico con matematica, fisica, informatica e scienze.</p>
+</section>
+
+<section class="section" id="attivita">
+  <h2>Attività</h2>
+  <ul>
+    <li>Sport e tornei scolastici</li>
+    <li>Esperienza all’estero in Grecia</li>
+    <li>Lavoro pratico in azienda familiare</li>
+  </ul>
+</section>
+
+<section class="section" id="sport">
+  <h2>Sport</h2>
+  <p>Il calcio è una parte fondamentale della mia crescita personale.</p>
+</section>
+
+<section class="section" id="futuro">
+  <h2>Futuro</h2>
+  <p>Obiettivo: università di Fisioterapia.</p>
+</section>
+
+<section class="section" id="pcto">
+  <h2>PCTO / FSL - Esperienza Formativa</h2>
 
   <p>
-    Durante il mio percorso scolastico
-    ho approfondito anche il tema
-    dell’Educazione Civica,
-    in particolare lo studio
-    della Costituzione Italiana.
+    Durante il mio percorso PCTO (ex FSL) ho svolto attività formative
+    utili allo sviluppo di competenze pratiche e professionali.
   </p>
 
-  <br>
+  <ul>
+    <li>Osservazione e attività pratiche in contesto lavorativo</li>
+    <li>Sviluppo competenze di responsabilità e organizzazione</li>
+    <li>Collegamento tra scuola e mondo del lavoro</li>
+  </ul>
 
-  <p>
-    La Costituzione rappresenta
-    il fondamento della democrazia italiana
-    e tutela diritti fondamentali
-    come la libertà,
-    l’uguaglianza,
-    il diritto al lavoro
-    e il rispetto della persona.
-  </p>
-
-  <br>
-
-  <p>
-    Attraverso un percorso interdisciplinare
-    ho collegato diverse materie scolastiche
-    ai principi costituzionali,
-    comprendendo l’importanza
-    della partecipazione civile,
-    della legalità
-    e del rispetto delle regole
-    nella vita quotidiana.
-  </p>
-
-  <br>
-
-  <a href="educazione-civica.html"
-     style="
-       display:inline-block;
-       margin-top:15px;
-       padding:12px 25px;
-       background:#1565c0;
-       color:white;
-       text-decoration:none;
-       border-radius:10px;
-       font-weight:bold;
-       transition:0.3s;
-     "
-     onmouseover="this.style.background='#0d47a1'"
-     onmouseout="this.style.background='#1565c0'">
-
-     Vai al sito di Educazione Civica
-
+  <a class="button" href="pcto-fsl.pdf" target="_blank">
+    Visualizza il PDF PCTO / FSL
   </a>
 
 </section>
-  <footer>
 
-    <p>
-      Presentazione Personale - Alfonso Malafronte
-    </p>
+</div>
 
-  </footer>
+<footer>
+  Presentazione Personale - Alfonso Malafronte
+</footer>
 
 </body>
-
 </html>
